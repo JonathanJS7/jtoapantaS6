@@ -10,16 +10,45 @@
         <Label 
             Text="Semana 6 Consumo WS"
             FontSize="20"
+            FontAttributes="Bold"
             HorizontalTextAlignment="Center"/>
-
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Text="CODIGO" FontSize="15" FontAttributes="Bold" TextColor="red" Grid.Row="0" Grid.Column="0"/>
+            <Label Text="NOMBRE" FontSize="15" FontAttributes="Bold" TextColor="red" Grid.Row="0" Grid.Column="1"/>
+            <Label Text="APELLIDO" FontSize="15" FontAttributes="Bold" TextColor="red" Grid.Row="0" Grid.Column="2"/>
+            <Label Text="EDAD" FontSize="15" FontAttributes="Bold" TextColor="red" Grid.Row="0" Grid.Column="3"/>
+        </Grid>
         <ListView x:Name="ListaEstudiantes">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
-                            <Label x:Name="lblNombre" Text="{Binding nombre}"/>
-                            <Label x:Name="lblApellido" Text="{Binding apellido}"/>
-
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="lblCodigo" Text="{Binding codigo}" Grid.Row="1" Grid.Column="0"/>
+                                <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Row="1" Grid.Column="1"/>
+                                <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Row="1" Grid.Column="2"/>
+                                <Label x:Name="lblEdad" Text="{Binding edad}" Grid.Row="1" Grid.Column="3"/>
+                            </Grid>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
