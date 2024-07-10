@@ -1,3 +1,4 @@
+using jtoapantaS6.Models;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 
@@ -22,4 +23,15 @@ public partial class vEstudiante : ContentPage
 		est = new ObservableCollection<Models.Estudiante>(mostrar);
 		ListaEstudiantes.ItemsSource = est;
 	}
+
+    private void btnAgregar_Clicked(object sender, EventArgs e)
+    {
+		Navigation.PushAsync(new Views.vAgregar());
+    }
+
+    private void ListaEstudiantes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+		var objEstudiante = (Estudiante)e.SelectedItem;
+		Navigation.PushAsync(new vActEliminar(objEstudiante));
+    }
 }
