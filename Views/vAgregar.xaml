@@ -15,7 +15,8 @@
         <Entry x:Name="txtApellido"
                Placeholder="Ingrese el apellido"/>
         <Entry x:Name="txtEdad"
-               Placeholder="Ingrese la edad"/>
+               Placeholder="Ingrese la edad"
+               Keyboard="Numeric"/>
         <Button x:Name="btnAgregar"
                 Text="Agregar Estudiante"
                 Clicked="btnAgregar_Clicked"/>
